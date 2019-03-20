@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,28 +30,22 @@ class _MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: InkWell(
-        onTap: changeColor,
-        child: Container(
-          color: _color,
-        ),
-      ),
-    );
-  }
-}
-
-class HelloText extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        child: Center(
-          child: Text(
-            'Hey there',
-            style: TextStyle(fontSize: 40.0),
-            textAlign: TextAlign.center,
+      body: SizedBox.expand(
+        child: InkWell(
+          onTap: changeColor,
+          child: Container(
+            color: _color,
+            child: Center(
+              child: Text(
+                'Hey there',
+                style: TextStyle(fontSize: 40),
+              ),
+            ),
           ),
         ),
+      ),
+      appBar: AppBar(
+        title: Text('Flutter is awesome!'),
       ),
     );
   }
